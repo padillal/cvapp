@@ -51,7 +51,7 @@ class App extends Component {
             id="firstName"
             />
           <button type="submit">
-            Add
+            +
           </button>
           <label htmlFor="lastName">Last Name</label>
           <input
@@ -61,8 +61,32 @@ class App extends Component {
             id="lastName"
             />
             <button type="submit">
-              Add
+              +
             </button>
+                <label htmlFor="email">Email</label>
+                <input
+                  onChange={this.handleChange}
+                  value={this.state.task}
+                  type="text"
+                  id="email"
+                  />
+                <button type="submit">
+                  +
+                </button>
+
+
+                <label htmlFor="Phone">Phone</label>
+                <input
+                  onChange={this.handleChange}
+                  value={this.state.task}
+                  type="text"
+                  id="Phone"
+                  />
+                <button type="submit">
+                  +
+                </button>
+
+
         </form>
         <Overview tasks={tasks} onRemove={this.onDeleteTask}/>
         </div>
@@ -71,16 +95,52 @@ class App extends Component {
         <div>
         <h1>Summary</h1>
         <hr></hr>
+        <form onSubmit={this.onSubmitTask}>
+            <label htmlFor="summary">Summary</label>
+            <input
+              onChange={this.handleChange}
+              value={this.state.task}
+              type="text"
+              id="summary"
+              />
+            <button type="submit">
+              +
+            </button>
+          </form>
         </div>
 
         <div>
         <h1>Experience</h1>
         <hr></hr>
+        <form onSubmit={this.onSubmitTask}>
+            <label htmlFor="experience">Experience</label>
+            <input
+              onChange={this.handleChange}
+              value={this.state.task}
+              type="text"
+              id="experience"
+              />
+            <button type="submit">
+              +
+            </button>
+          </form>
         </div>
 
         <div>
         <h1>Skills</h1>
         <hr></hr>
+        <form onSubmit={this.onSubmitTask}>
+            <label htmlFor="skills">Skills</label>
+            <input
+              onChange={this.handleChange}
+              value={this.state.task}
+              type="text"
+              id="skills"
+              />
+            <button type="submit">
+              +
+            </button>
+          </form>
         </div>
       </body>
 
