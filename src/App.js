@@ -9,141 +9,129 @@ class App extends Component {
     super();
 
     this.state = {
-      task: "",
-      tasks: [],
+      firstName:"",
+      lastName:"",
+      email:"",
+      phone:"",
+      summary:"",
+      experience:"",
+      skills:"",
     };
   }
 
   handleChange = (e) => {
     this.setState({
-      task: e.target.value,
+      [e.target.id]: e.target.value
     });
   };
 
-  onSubmitTask = (e) => {
-    e.preventDefault();
-    this.setState({
-      tasks: this.state.tasks.concat({task: this.state.task, id: uniqid()}),
-      task: "",
-    });
-  };
-
-  onDeleteTask = (e) => {
-    this.setState({
-      tasks: this.state.tasks.filter((task) => task.id !== e)
-    })
+  handleSubmit = (e) => {
+    document.getElementsByClassName(e.target.name)[0].innerHTML = this.state[e.target.name];
   }
 
   render() {
-    const {tasks} = this.state;
     return (
-      <body>
-
       <div>
-      <h1>Basic Info</h1>
-      <hr></hr>
-      <form onSubmit={this.onSubmitTask}>
-          <label htmlFor="firtName">First Name</label>
-          <input
-            onChange={this.handleChange}
-            value={this.state.task}
-            type="text"
-            id="firstName"
-            />
-          <button type="submit">
-            +
+        <section>
+          <h1>Basic Info</h1>
+          <hr></hr>
+          <label htmlFor="firstName">First Name</label>
+          <input  onChange={this.handleChange}
+                value={this.state.firstName}
+                type="text"
+                id="firstName"
+                />
+          <button type="submit"
+                onClick={this.handleSubmit}
+                name="firstName">+
           </button>
+          <p className="firstName"></p>
+
           <label htmlFor="lastName">Last Name</label>
-          <input
-            onChange={this.handleChange}
-            value={this.state.task}
-            type="text"
-            id="lastName"
-            />
-            <button type="submit">
-              +
-            </button>
-                <label htmlFor="email">Email</label>
-                <input
-                  onChange={this.handleChange}
-                  value={this.state.task}
-                  type="text"
-                  id="email"
-                  />
-                <button type="submit">
-                  +
-                </button>
+          <input  onChange={this.handleChange}
+                value={this.state.lastName}
+                type="text"
+                id="lastName"
+                />
+          <button type="submit"
+                onClick={this.handleSubmit}
+                name="lastName">+
+          </button>
+          <p className="lastName"></p>
 
+          <label htmlFor="email">Email</label>
+          <input  onChange={this.handleChange}
+                value={this.state.email}
+                type="text"
+                id="email"
+                />
+          <button type="submit"
+                onClick={this.handleSubmit}
+                name="email">+
+          </button>
+          <p className="email"></p>
 
-                <label htmlFor="Phone">Phone</label>
-                <input
-                  onChange={this.handleChange}
-                  value={this.state.task}
-                  type="text"
-                  id="Phone"
-                  />
-                <button type="submit">
-                  +
-                </button>
+          <label htmlFor="phone">Phone</label>
+          <input  onChange={this.handleChange}
+                value={this.state.phone}
+                type="text"
+                id="phone"
+                />
+          <button type="submit"
+                onClick={this.handleSubmit}
+                name="phone">+
+          </button>
+          <p className="phone"></p>
+        </section>
 
-
-        </form>
-        <Overview tasks={tasks} onRemove={this.onDeleteTask}/>
-        </div>
-
-
-        <div>
+        <section>
         <h1>Summary</h1>
         <hr></hr>
-        <form onSubmit={this.onSubmitTask}>
-            <label htmlFor="summary">Summary</label>
-            <input
-              onChange={this.handleChange}
-              value={this.state.task}
+        <label htmlFor="summary">Summary</label>
+        <input  onChange={this.handleChange}
+              value={this.state.summary}
               type="text"
               id="summary"
               />
-            <button type="submit">
-              +
-            </button>
-          </form>
-        </div>
+        <button type="submit"
+              onClick={this.handleSubmit}
+              name="sumarry">+
+        </button>
+        <p className="summary"></p>
+        </section>
 
-        <div>
+        <section>
         <h1>Experience</h1>
         <hr></hr>
-        <form onSubmit={this.onSubmitTask}>
-            <label htmlFor="experience">Experience</label>
-            <input
-              onChange={this.handleChange}
-              value={this.state.task}
+        <label htmlFor="experience">Experience</label>
+        <input  onChange={this.handleChange}
+              value={this.state.experience}
               type="text"
               id="experience"
               />
-            <button type="submit">
-              +
-            </button>
-          </form>
-        </div>
+        <button type="submit"
+              onClick={this.handleSubmit}
+              name="experience">+
+        </button>
+        <p className="experience"></p>
+        </section>
 
-        <div>
+        <section>
         <h1>Skills</h1>
         <hr></hr>
-        <form onSubmit={this.onSubmitTask}>
-            <label htmlFor="skills">Skills</label>
-            <input
-              onChange={this.handleChange}
-              value={this.state.task}
+        <label htmlFor="skills">Skills</label>
+        <input  onChange={this.handleChange}
+              value={this.state.skills}
               type="text"
               id="skills"
               />
-            <button type="submit">
-              +
-            </button>
-          </form>
-        </div>
-      </body>
-
+        <button type="submit"
+              onClick={this.handleSubmit}
+              name="skills">+
+        </button>
+        <p className="skills"></p>
+        </section>
+      </div>
     );
   }
 }
