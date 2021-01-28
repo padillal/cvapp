@@ -56,11 +56,10 @@ class App extends Component {
         [e.target.name]: "",
         [`${e.target.name}Output`]: inputValue,
         [`${e.target.name}Error`]: "",
-
       });
-      if(this.state['${e.target.name}Output'] != ""){
-        this.setState({
-          removeStyle: this.showStyle,
+       if(`${e.target.name}Output` != ""){
+       this.setState({
+           [`${e.target.name}Remove`]: this.showStyle,
         });
       }
 
@@ -152,7 +151,7 @@ class App extends Component {
             <button type="submit" onClick={this.handleSubmit} name="firstName">
               +
             </button>
-            <button className="remove" style={this.state.removeStyle} type="submit" onClick={this.handleSubmit} name="firstName">
+            <button className="firstNameRemove" style={this.state.removeStyle} type="submit" onClick={this.handleSubmit} name="firstName">
               -
             </button>
           </div>
@@ -173,7 +172,7 @@ class App extends Component {
             <button type="submit" onClick={this.handleSubmit} name="lastName">
               +
             </button>
-            <button className="remove" style={this.state.removeStyle} type="submit" onClick={this.handleSubmit} name="lastName">
+            <button className="lastNameRemove" style={this.state.removeStyle} type="submit" onClick={this.handleSubmit} name="lastName">
               -
             </button>
           </div>
@@ -194,7 +193,7 @@ class App extends Component {
             <button type="submit" onClick={this.handleSubmit} name="email">
               +
             </button>
-            <button className="remove" style={this.state.removeStyle} type="submit" onClick={this.handleSubmit} name="email">
+            <button className="emailRemove" style={this.state.removeStyle} type="submit" onClick={this.handleSubmit} name="email">
               -
             </button>
           </div>
@@ -215,7 +214,7 @@ class App extends Component {
             <button type="submit" onClick={this.handleSubmit} name="phone">
               +
             </button>
-            <button className="remove" style={this.state.removeStyle} type="submit" onClick={this.handleSubmit} name="phone">
+            <button className="phoneRemove" style={this.state.removeStyle} type="submit" onClick={this.handleSubmit} name="phone">
               -
             </button>
           </div>
@@ -240,7 +239,7 @@ class App extends Component {
             <button type="submit" onClick={this.handleSubmit} name="summary">
               +
             </button>
-            <button className="remove" style={this.state.removeStyle} type="submit" onClick={this.handleSubmit} name="summary">
+            <button className="summaryRemove" style={this.state.removeStyle} type="submit" onClick={this.handleSubmit} name="summary">
               -
             </button>
           </div>
@@ -265,7 +264,7 @@ class App extends Component {
             <button type="submit" onClick={this.handleSubmit} name="experience">
               +
             </button>
-            <button className="remove" style={this.state.removeStyle} type="submit" onClick={this.handleSubmit} name="experience">
+            <button className="experienceRemove" style={this.state.removeStyle} type="submit" onClick={this.handleSubmit} name="experience">
               -
             </button>
           </div>
@@ -290,7 +289,7 @@ class App extends Component {
             <button type="submit" onClick={this.handleSubmit} name="skills">
               +
             </button>
-            <button className="remove" style={this.state.removeStyle} type="submit" onClick={this.handleSubmit} name="skills">
+            <button className="skillsRemove" style={this.state.removeStyle} type="submit" onClick={this.handleSubmit} name="skills">
               -
             </button>
           </div>
