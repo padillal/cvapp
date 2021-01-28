@@ -56,8 +56,13 @@ class App extends Component {
         [e.target.name]: "",
         [`${e.target.name}Output`]: inputValue,
         [`${e.target.name}Error`]: "",
-        removeStyle: this.showStyle,
+
       });
+      if(this.state['${e.target.name}Output'] != ""){
+        this.setState({
+          removeStyle: this.showStyle,
+        });
+      }
 
     }
   };
